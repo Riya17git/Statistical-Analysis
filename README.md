@@ -68,6 +68,6 @@ def bar_plot(plot, feature):
         ax.annotate(percentage, (x, y), size = 24) # annotate the percentage
     plt.show() # show the plot
 ```
-![png](images/plot (3).png)
+![png](images/plot_3.png)
 
 
