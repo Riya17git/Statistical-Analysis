@@ -98,6 +98,43 @@ plt.close()
 # Download the saved file
 files.download('/content/plot_1.png')
 ```
-![png]()
+![png](images/plot_1.png)
 
+## Step 1 : define the null and ulternate hypothesis
+
+- H0 : There is no significant difference in the means of the numerical variable across "Target" groups.
+
+- H1: At least one "Target" group mean is significantly different from the others.
+
+##  Step 2 : Choosing the correct test
+
+- We are choosing one way Anova
+
+- One-way ANOVA is used to determine if there is a statistically significant difference in the means of a continuous variable across two or more independent groups.
+
+```python
+from scipy.stats import f_oneway
+
+graduate = df[df['Target'] == 'Graduate']['Admission grade']
+dropout = df[df['Target'] == 'Dropout']['Admission grade']
+enrolled = df[df['Target'] == 'Enrolled']['Admission grade']
+
+f_stat, p_value = f_oneway(graduate, dropout, enrolled)
+print("ANOVA F-statistic:", f_stat)
+print("p-value:", p_value)
+
+if p_value < 0.05:
+    print("Significant difference in Admission grade among Target groups.")
+else:
+    print("No significant difference in Admission grade among Target groups.")
+```
+## Step 4: Draw conclusion from numbers
+
+- Since the p-value is less than the threshold then we can reject the null hypothesis
+
+
+- The significant p-value tells us that the mean "Admission grade" is not the same across the "Target" groups. In other words, the type of "Target" (Graduate, Dropout, Enrolled) is associated with differences in admission grades.
+
+
+- Since the test is statistically significant, we can conclude that there is a strong association between the "Target" variable and "Admission grade."
 
