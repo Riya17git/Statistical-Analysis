@@ -68,7 +68,7 @@ def bar_plot(plot, feature):
         ax.annotate(percentage, (x, y), size = 24) # annotate the percentage
     plt.show() # show the plot
 ```
-![Bar Plot of Target Distribution](images/bar_plot.png)
+![Bar Plot of Target Distribution](images/plot (3).png)
 
 
 
