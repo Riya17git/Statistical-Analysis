@@ -70,4 +70,34 @@ def bar_plot(plot, feature):
 ```
 ![png](images/plot_3.png)
 
+## Q 1 : is there a significant difference between Admission grade and Target variable?
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+from google.colab import files
+
+# Create a boxplot
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Target', y='Admission grade', data=df)
+
+# Add plot title and labels
+plt.title('Distribution of Admission Grade by Target')
+plt.xlabel('Target')
+plt.ylabel('Admission Grade')
+
+# Save the plot before showing it
+plt.savefig("/content/plot_1.png", format='png')
+
+# Show the plot (optional)
+plt.show()
+
+# Close the figure to free memory
+plt.close()
+
+# Download the saved file
+files.download('/content/plot_1.png')
+```
+![png]()
+
 
