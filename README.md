@@ -27,17 +27,25 @@ The dataset contains different features, some of which are continuous (e.g., GDP
 
 The dataset contains multiple features including both categorical and numerical data. We start by reviewing the general statistics and the distribution of each feature.
 
+## Importing Libraries
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import scipy.stats as stats
+from sklearn.model_selection import train_test_split
+```
+
+##  Data Information
 ```python
 df.info()
 df.describe(include='all')
+```
 
 # Hypothesis Testing
 
-1. Admission Grade vs Target
-Hypothesis
+- 
 
-H0: There is no significant difference in the means of the "Admission grade" across different "Target" groups.
-H1: At least one "Target" group mean is significantly different from the others.
-Using One-way ANOVA, we found a significant difference in the "Admission grade" across "Target" groups.
 
-f_stat, p_value = f_oneway(graduate, dropout, enrolled)
+
