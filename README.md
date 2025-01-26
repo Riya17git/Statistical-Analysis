@@ -43,9 +43,32 @@ df.info()
 df.describe(include='all')
 ```
 
-# Hypothesis Testing
+# Null Values in Data
+```python
+df.isnull().sum()
+```
 
-- 
+# Describe Numerical Columns
+```python
+df.describe(include = ['int64']).T
+```
+# Exploratory Data Analysis
+```python
+def bar_plot(plot, feature):
+    '''
+    plot
+    feature: categorical feature
+    the function won't work if a column is passed in hue parameter
+    '''
+    total = len(feature) # length of the column
+    for p in ax.patches:
+        percentage = '{:.1f}%'.format(100 * p.get_height()/total) # percentage of each class of the category
+        x = p.get_x() + p.get_width() / 2 - 0.05 # width of the plot
+        y = p.get_y() + p.get_height() + 0.5         # height of the plot
+        ax.annotate(percentage, (x, y), size = 24) # annotate the percentage
+    plt.show() # show the plot
+```
+![Bar Plot of Target Distribution](Downloads/bar_plot.png)
 
 
 
